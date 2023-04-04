@@ -1,0 +1,54 @@
+.chart {
+    width: 1%;
+    height: 1%;
+    position: relative;
+    margin: auto;
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    background: #fff;
+  }
+  
+  #myChart
+  {
+    width: 1%;
+    height: 1%;
+  }
+
+  .slice {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 150px, 300px, 0);
+    border-radius: 50%;
+  }
+  
+  #localisation {
+    z-index: 5;
+    background: #F44336;
+    transform: rotate(0deg);
+  }
+  
+  #densite {
+    z-index: 4;
+    background: #E91E63;
+    transform: rotate(72deg);
+  }
+  
+  #surface {
+    z-index: 3;
+    background: #9C27B0;
+    transform: rotate(144deg);
+  }
+  
+  #latence {
+    z-index: 2;
+    background: #2196F3;
+    transform: rotate(216deg);
+  }
+  
+  #debit {
+    z-index: 1;
+    background: #4CAF50;
+    transform: rotate(288deg);
+  }
+  
