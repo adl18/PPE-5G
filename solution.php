@@ -108,7 +108,8 @@ $impact_latence = $latence_low + ($latence_high - $latence_low) * (($latence - 1
 $impact_debit = $debit_10gb + ($debit_100gb - $debit_10gb) * (($debit - 10) / (90));
 
 // Impact Total
-$impact_total = ($impact_latence+$impact_debit+$impact+$impact_localisation_densite);
+$impact_total1 = ($impact_latence+$impact_debit+$impact+$impact_localisation_densite);
+$impact_total=ceil($impact_total1);
 
 
 // Affichage du résultat
