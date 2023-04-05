@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+
+header{
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+
+.navbar{
+    position: relative;
+    padding-top: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar a{
+    color: #2A2E5A;   
+}
+
+.navbar .logo{
+    font-size: 2em;
+    font-weight: lighter;
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items:  center;
+}
+
+.navbar .nav-links ul{
+    display: flex;
+    
+}
+
+.navbar .nav-links ul li{
+    margin: 0 25px;
+}
+
+.navbar .nav-links ul li.active a{
+    font-weight: 600;
+}
+
+/* Fin Navbar*/
+
