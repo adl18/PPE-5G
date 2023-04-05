@@ -9,8 +9,8 @@
 <body>
 <?php
 // Variables
-$localisation = $_GET['choix'];
-$densite = $_GET['dense'];
+$localisation = $_GET['localisation'];
+$densite = $_GET['densite'];
 $surface = $_GET['surface'];
 $latence = $_GET['latence'];
 $debit = $_GET['debit'];
@@ -18,7 +18,6 @@ $debit = $_GET['debit'];
 // Coefficients
 // LOCALISATION
 $localisation_low = 0.3;
-$localisation_entreprise = 0.7;
 $localisation_high = 1.2;
 
 // DENSITE DE LA ZONE
@@ -49,7 +48,7 @@ elseif((( $_GET['debit'])<1)){
     }
 
 
-echo"la frequence est : ". $frequence."\n";
+//echo"la frequence est : ". $frequence."\n";
 
 ////////ANTENNE 
     //Antenne macro-cell pour fréquence 700MHz
@@ -58,7 +57,7 @@ echo"la frequence est : ". $frequence."\n";
         $nbAntenne=ceil($nbAntenne1);
         $impact=$nbAntenne*4000*0.057;//aval
         $impactAmont=$nbAntenne*4000*0.15;//amont
-        echo"l'emission de CO2 en amont pour ".$nbAntenne." antennes est de ".$impactAmont. "Kg.CO2.equivalent";
+        //echo"l'emission de CO2 en amont pour ".$nbAntenne." antennes est de ".$impactAmont. "Kg.CO2.equivalent";
     }
 
     //Antenne macro-cell pour fréquence 3,5GHz
@@ -67,7 +66,7 @@ echo"la frequence est : ". $frequence."\n";
         $nbAntenne=ceil($nbAntenne1);
         $impact=$nbAntenne*6500*0.057;
         $impactAmont=$nbAntenne*6500*0.15;
-        echo"l'emission de CO2 en amont pour ".$nbAntenne." antennes est de ".$impactAmont. "Kg.CO2.equivalent";
+       // echo"l'emission de CO2 en amont pour ".$nbAntenne." antennes est de ".$impactAmont. "Kg.CO2.equivalent";
     }
 
 //echo "\n"."le nombre d'antenne est :".$nbAntenne."\n";
@@ -79,7 +78,6 @@ echo"la frequence est : ". $frequence."\n";
 ////////////////////////CALCUL DE L'IMPACT ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
-
 
 // Impact Localisation
 if($localisation == 1){ //zone rurale
@@ -99,7 +97,7 @@ if($densite == 1){
 $impact_localisation_densite= $coeff_localisation+$coeff_densite;
 
 // Impact Surface
-//$impact_surface = $surface * $surface_coefficient;
+ $impact_surface = $surface * $surface_coefficient;
 
 // Impact Latence
 $impact_latence = $latence_low + ($latence_high - $latence_low) * (($latence - 1) / (50 - 1));
@@ -113,7 +111,38 @@ $impact_total=ceil($impact_total1);
 
 
 // Affichage du résultat
-echo "L'impact en kg.equivalent CO2 de l'architecture 5G est de : " . $impact_total . " kg CO2e/an";
+//echo "L'impact en kg.equivalent CO2 de l'architecture 5G est de : " . $impact_total . " kg CO2e/an";
 
 ?>
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+  <title>Simulation</title>
+  <link rel="stylesheet" href="solution.css">
+<html>
+<head>
+    <title>Impact environnemental de l'architecture 5G</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Impact environnemental de l'architecture 5G</h1>
+    <div class="impact">
+        <p>L'impact en kg.equivalent CO2 de l'architecture 5G est de : <span><?php echo $impact_total; ?></span> kg CO2e/an</p>
+    </div>
+    <div class="list-impact">
+        <h2>Liste des impacts :</h2>
+        <ul>
+            <li>Impact de la localisation : <?php echo $coeff_localisation; ?></li>
+            <li>Impact de la densité : <?php echo $coeff_densite; ?></li>
+            <li>Impact de la surface : <?php echo $impact_surface; ?></li>
+            <li>Impact de la latence : <?php echo $impact_latence; ?></li>
+            <li>Impact du débit : <?php echo $impact_debit; ?></li>
+        </ul>
+    </div>
+    <div class="antenne">
+        <p>Le nombre d'antennes nécessaire est de : <span><?php echo $nbAntenne; ?></span></p>
+    </div>
+</body>
+</html>
 

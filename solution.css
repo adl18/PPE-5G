@@ -1,0 +1,55 @@
+/* Style de la page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  /* Style de l'en-tête */
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Style des titres */
+  h1, h2, h3 {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  /* Style de la section de l'impact environnemental */
+  #impact-environnemental {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style de la liste des impacts */
+  #liste-impacts {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style de la section du nombre d'antennes */
+  #nombre-antennes {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style des liens */
+  a {
+    color: #333;
+  }
+  
+  a:hover {
+    color: #000;
+  }
+  
