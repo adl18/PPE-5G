@@ -20,7 +20,8 @@ header{
 
 .navbar{
     position: relative;
-    padding-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 50px;
     padding-right: 50px;
     display: flex;
@@ -36,6 +37,7 @@ header{
 .navbar .logo{
     font-size: 2em;
     font-weight: lighter;
+    align-items:center;
 }
 
 .navbar .nav-links {
@@ -58,3 +60,36 @@ header{
 
 /* Fin Navbar*/
 
+.container{
+    width: 100%;
+    height: 350;
+    display:inline-block;
+    position: relative;
+}
+
+img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.container .text{
+    /* background: #2A2E5A; */
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 10%;
+    color: white;
+    width: 70%;
+}
+
+.container .text h1{
+    font-weight: lighter;
+}
+
+.container .text h4{
+    font-weight: lighter;
+}
